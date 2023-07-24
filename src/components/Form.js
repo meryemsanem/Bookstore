@@ -1,16 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBook } from '../redux/books/booksSlice';
 
 function Form() {
-  const options = ['Author 1', 'Author 2', 'Author 3', 'Author 4'];
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
+
+  const dispatch = useDispatch();
+  const books = useSelector((state) => state.book.books);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const id = books.length + 1;
+    const newBook = {
+      bookId: `book-${id}`,
+      title,
+      author,
+      category,
+    };
+    dispatch(addBook(newBook));
+    setTitle('');
+    setAuthor('');
+    setCategory('');
+  };
 
   return (
     <>
       <h3>ADD NEW BOOK</h3>
-      <form action="">
-        <input type="text" placeholder="Book Title" />
-        <Dropdown options={options} value="Author" />
+      <form onSubmit={submitHandler}>
+        <input
+          type="text"
+          placeholder="Book Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          name="book-title"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Book Author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+          name="book-author"
+          required
+        />
+        <Dropdown
+          options={['Action', 'Science Fiction', 'Economy']}
+          value={category}
+          onChange={(selectedOption) => setCategory(selectedOption.value)}
+          placeholder="Select a category"
+          required
+        />
         <button type="submit">ADD BOOK</button>
       </form>
     </>

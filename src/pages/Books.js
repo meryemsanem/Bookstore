@@ -1,34 +1,29 @@
-/* eslint-disable import/no-cycle */
+// Import statements remain the same
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import BookComp from '../components/BookComp';
+import { removeBook } from '../redux/books/booksSlice';
 import Form from '../components/Form';
 
-const ListOfBooks = [
-  {
-    id: 1,
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-    category: 'Action',
-  },
-  {
-    id: 2,
-    title: 'Dune',
-    author: 'Frank Herbert',
-    category: 'Science Fiction',
-  },
-  {
-    id: 3,
-    title: 'Capital in the Twenty-First Century',
-    author: 'Suzanne Collins',
-    category: 'Economy',
-  },
-];
-
 function Books() {
+  const books = useSelector((state) => state.book.books);
+  const dispatch = useDispatch();
+
+  const clickHandler = (id) => {
+    dispatch(removeBook(id));
+  };
+
   return (
     <>
-      {ListOfBooks.map((book) => (
-        <BookComp key={book.id} book={book} />
+      {books.map((book) => (
+        <BookComp
+          key={book.bookId + book.author}
+          title={book.title}
+          author={book.author}
+          category={book.category}
+          id={book.bookId}
+          onClick={() => clickHandler(book.bookId)}
+        />
       ))}
       <Form />
     </>

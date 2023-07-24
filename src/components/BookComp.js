@@ -1,12 +1,13 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function BookComp(props) {
-  const { book } = props;
-  const {
-    id, title, author, category,
-  } = book;
+function BookComp({
+  id, title, author, category, onClick,
+}) {
+  const handleRemoveClick = () => {
+    onClick(id);
+  };
+
   return (
     <div className="books-container">
       <div className="book-container">
@@ -16,25 +17,37 @@ function BookComp(props) {
       </div>
       <ul className="options">
         <li>
-          <a href="/">Comments</a>
+          <button type="button">Comments</button>
         </li>
+
         <li>
-          <a href="/">Remove</a>
+          <button type="button" onClick={handleRemoveClick}>
+            Remove
+          </button>
         </li>
+
         <li>
-          <a href="/">Edit</a>
+          <button type="button">Edit</button>
         </li>
       </ul>
     </div>
   );
 }
 
-BookComp.propTypes = {
-  book: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-  }).isRequired,
+BookComp.defaultProps = {
+  id: '',
+  title: '',
+  author: '',
+  category: '',
+  onClick: () => {},
 };
+
+BookComp.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  category: PropTypes.string,
+  onClick: PropTypes.func,
+};
+
 export default BookComp;
