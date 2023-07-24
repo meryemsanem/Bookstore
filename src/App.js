@@ -5,7 +5,9 @@ import Pro from './components/Pro';
 function App() {
   return (
     <Router>
-      <Pro />
+      <main>
+        <Pro />
+      </main>
     </Router>
   );
 }
