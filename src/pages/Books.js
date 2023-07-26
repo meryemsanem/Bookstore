@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getTheBook, deleteTheBook } from '../redux/books/booksSlice';
+import { fetchBooks, deleteTheBook } from '../redux/books/booksSlice';
 import Form from '../components/Form';
 import BookComp from '../components/BookComp';
 
@@ -9,7 +9,7 @@ function Books() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getTheBook());
+    dispatch(fetchBooks());
   }, [dispatch]);
 
   const bookItems = Object.entries(books).map(([id, books]) => {
