@@ -1,10 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
+import './styles/Navbar.css';
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="navbar">
       <div className="logo-container">
         <a className="logo" href="/">
           BOOKSTORE
@@ -29,10 +30,9 @@ function Navbar() {
             </li>
           ))}
         </ul>
-
-        <div className="person">
+        <button type="submit" className="person">
           <FaUser />
-        </div>
+        </button>
       </div>
     </nav>
   );
