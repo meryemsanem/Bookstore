@@ -37,7 +37,7 @@
   font-weight: bold;
   letter-spacing: -0.2px;
   color: #121212;
-  font-family: "Roboto Slab" , sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 .book-author {
@@ -53,46 +53,43 @@
   list-style: none;
   gap: 15px;
 
-   .button {
-  background-color: #fff;
-  border: none;
-  padding-right: 8px;
-  padding-left: 0;
-  border-right: solid 0.5px #e8e8e8;
-  font-family: "Roboto Slab", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 300;
-  color: #4386bf;
-  cursor: pointer;
-}
-}
-
-  .progress-section {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
-      conic-gradient(#307bbe 75%, #f2f6f9 0);
+  .button {
+    background-color: #fff;
+    border: none;
+    padding-right: 8px;
+    padding-left: 0;
+    border-right: solid 0.5px #e8e8e8;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #4386bf;
+    cursor: pointer;
   }
-  
+}
 
+.progress-section {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /*  stylelint-disable-next-line */
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#307bbe 75%, #f2f6f9 0);
+}
 
-  .book-prog {
-    display: flex;
-    align-items: center;
-  ;
-  }
-  
- .chapter-container {
+.book-prog {
+  display: flex;
+  align-items: center;
+}
+
+.chapter-container {
   margin-left: 6rem;
   border-left: 2px solid #e8e8e8;
   padding-left: 65px;
   padding-right: 30px;
-  
 }
 
 .current {
-  font-family: "Roboto Slab", sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 0.813rem;
   font-weight: 300;
   color: #121212;
@@ -101,7 +98,7 @@
 }
 
 .chapter {
-  font-family: "Roboto Slab", sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 1rem;
   font-weight: 300;
   color: #121212;
@@ -109,7 +106,7 @@
 
 .btn-progress {
   width: 8.938rem;
-  font-family: "Roboto Slab", sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 0.813rem;
   font-weight: 300;
   text-align: center;
@@ -146,5 +143,4 @@
   font-size: 0.875rem;
   color: #121212;
   opacity: 0.5;
-
-}  
+}
