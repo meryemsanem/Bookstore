@@ -7,22 +7,24 @@ function BookComp({
 }) {
   return (
     <div className="book-container">
-      <h3 className="book-category">{category}</h3>
-      <h2 className="book-title">{title}</h2>
-      <h3 className="book-author">{author}</h3>
-      <ul className="options">
-        <li>
-          <button type="button" className="button">Comments</button>
-        </li>
-        <li>
-          <button type="button" className="button" onClick={onClick} id={bookId}>
-            Remove
-          </button>
-        </li>
-        <li>
-          <button type="button" className="button">Edit</button>
-        </li>
-      </ul>
+      <div className="bookss">
+        <h3 className="book-category">{category}</h3>
+        <h2 className="book-title">{title}</h2>
+        <h3 className="book-author">{author}</h3>
+        <ul className="options">
+          <li>
+            <button type="button" className="button">Comments</button>
+          </li>
+          <li>
+            <button type="button" className="button" onClick={onClick} id={bookId}>
+              Remove
+            </button>
+          </li>
+          <li>
+            <button type="button" className="button">Edit</button>
+          </li>
+        </ul>
+      </div>
       <div className="book-prog">
         <div className="progress-section">
           <progress

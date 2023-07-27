@@ -10,11 +10,13 @@ function Pro() {
   return (
     <>
       <div className="container">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Books />} />
-          <Route path="/categories" element={<Categories />} />
-        </Routes>
+        <div className="main-container">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Books />} />
+            <Route path="/categories" element={<Categories />} />
+          </Routes>
+        </div>
       </div>
     </>
   );

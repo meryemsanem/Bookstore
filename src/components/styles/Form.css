@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 .form-container {
   padding: 20px 20px;
   width: 97%;
@@ -5,7 +6,6 @@
   align-self: center;
   justify-content: center;
   background-color: #fafafa;
-  margin: 10px auto;
 }
 
 h2 {

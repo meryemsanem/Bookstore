@@ -36,7 +36,6 @@ function Books() {
           />
         ))}
       </div>
-      <hr />
       <Form className="form" />
     </>
   );
