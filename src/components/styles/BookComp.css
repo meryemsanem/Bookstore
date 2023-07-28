@@ -73,7 +73,7 @@
   border-radius: 50%;
   /*  stylelint-disable-next-line */
   background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
-    conic-gradient(#307bbe 75%, #f2f6f9 0);
+    conic-gradient(#307bbe 65%, #f2f6f9 0);
 }
 
 .book-prog {

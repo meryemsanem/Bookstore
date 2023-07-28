@@ -13,34 +13,31 @@ function BookComp({
         <h3 className="book-author">{author}</h3>
         <ul className="options">
           <li>
-            <button type="button" className="button">Comments</button>
+            <button type="button" className="button">
+              Comments
+            </button>
           </li>
           <li>
-            <button type="button" className="button" onClick={onClick} id={bookId}>
+            <button
+              type="button"
+              className="button"
+              onClick={onClick}
+              id={bookId}
+            >
               Remove
             </button>
           </li>
           <li>
-            <button type="button" className="button">Edit</button>
+            <button type="button" className="button">
+              Edit
+            </button>
           </li>
         </ul>
       </div>
       <div className="book-prog">
-        <div className="progress-section">
-          <progress
-            value="75"
-            min="0"
-            max="100"
-            style={{
-              height: 0,
-              width: 0,
-            }}
-          >
-            75%
-          </progress>
-        </div>
+        <div className="progress-section" />
         <div className="book-container2">
-          <h3 className="book-percentage">50%</h3>
+          <h3 className="book-percentage">65%</h3>
           <p className="book-comp">Completed</p>
         </div>
         <div className="chapter-container">
